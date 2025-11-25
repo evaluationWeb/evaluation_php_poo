@@ -21,3 +21,7 @@ cd evaluation_php_poo
 ```sh
 composer install
 ```
+### 4 démarrer le serveur PHP
+```sh
+php -S 127.0.0.1:8000
+```
