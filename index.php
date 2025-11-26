@@ -21,10 +21,10 @@ switch ($path) {
             $homeController->index();
             break;
         case '/game/add':
-            $registerController->login();
+            $gameController->addGame();
             break;
         case '/games':
-            $registerController->addAccount();
+            $gameController>showAllGames();
             break;
         default:
             $errorController->error404();
