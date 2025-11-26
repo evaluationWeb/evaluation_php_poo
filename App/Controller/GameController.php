@@ -25,7 +25,16 @@ class GameController extends AbstractController
     }
 
     //Méthodes
+    public function addGame(): void{
+    $data = [];
 
+        $consoleRepo = new ConsoleRepository();
+        $consoles = $consoleRepo->findAllConsoles();
+
+        $data['consoles'] = $consoles;
+
+        $this->render('template_add_game.php', 'Ajouter un jeu', $data);
+    }
     /**
      * Méthode pour ajouter un Jeu (Game)
      * @return mixed Retourne le template

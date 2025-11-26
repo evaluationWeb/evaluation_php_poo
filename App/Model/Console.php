@@ -15,7 +15,7 @@ class Console
         $this->manufacturer = $manufacturer;
     }
     //Getters et Setters
-    public function getId(): ?int{
+    public function getConsoleId(): ?int{
         return $this->id;
     }
     public function setId(?int $id): void{
