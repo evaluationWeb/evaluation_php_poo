@@ -8,7 +8,7 @@ class Game
     private int $id;
     private string $title;
     private string $type;
-    private string $publish_at;
+    private \DateTimeImmutable $publish_at;
     private int $console_id;
 
     //Constructeur
@@ -27,7 +27,7 @@ class Game
     {
         return $this->type;
     }
-    public function getPublishAt(): string
+    public function getPublishAt(): \DateTimeImmutable
     {
         return $this->publish_at;
     }
@@ -48,7 +48,7 @@ class Game
     {
         $this->type = $type;
     }
-    public function setPublishAt(string $publish_at): void
+    public function setPublishAt(\DateTimeImmutable $publish_at): void
     {
         $this->publish_at = $publish_at;
     }

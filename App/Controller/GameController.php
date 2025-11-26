@@ -30,7 +30,7 @@ class GameController extends AbstractController
      * Méthode pour ajouter un Jeu (Game)
      * @return mixed Retourne le template
      */
-    public function saveGame(): mixed 
+    public function addGame(): mixed
     {
         return "template avec la méthode render";
     }
@@ -39,7 +39,7 @@ class GameController extends AbstractController
      * Méthode pour afficher la liste des Jeux (Game)
      * @return mixed Retourne le template
      */
-    public function showAllGames(): mixed 
+    public function showAllGames(): mixed
     {
         return "template avec la méthode render";
     }

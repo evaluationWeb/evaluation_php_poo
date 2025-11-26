@@ -17,16 +17,16 @@ $gameController = new GameController();
 
 //Router
 switch ($path) {
-        case '/':
-            $homeController->index();
-            break;
-        case '/game/add':
-            $registerController->login();
-            break;
-        case '/games':
-            $registerController->addAccount();
-            break;
-        default:
-            $errorController->error404();
-            break;
-    }
+    case '/':
+        $homeController->index();
+        break;
+    case '/game/add':
+        $gameController->addGame();
+        break;
+    case '/games':
+        $gameController->showAllGames();
+        break;
+    default:
+        $errorController->error404();
+        break;
+}
