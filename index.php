@@ -1,6 +1,6 @@
 <?php
 
-//import de de l'autoload
+//import de l'autoload
 include 'vendor/autoload.php';
 include 'env.php';
 
