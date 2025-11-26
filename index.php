@@ -24,7 +24,7 @@ switch ($path) {
             $gameController->addGame();
             break;
         case '/games':
-            $gameController>showAllGames();
+            $gameController->showAllGames();
             break;
         default:
             $errorController->error404();
