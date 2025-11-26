@@ -1,6 +1,6 @@
 <?php
 
-//import de de l'autoload
+//import de l'autoload
 include 'vendor/autoload.php';
 include 'env.php';
 
@@ -17,16 +17,21 @@ $gameController = new GameController();
 
 //Router
 switch ($path) {
-        case '/':
-            $homeController->index();
-            break;
-        case '/game/add':
-            $gameController->addGame();
-            break;
-        case '/games':
-            $gameController->showAllGames();
-            break;
-        default:
-            $errorController->error404();
-            break;
-    }
+    case '/':
+        $homeController->index();
+        break;
+    case '/game/add':
+        //Route pour l'ajout d'un jeu
+        $gameController->addGame();
+        break;
+    case '/games':
+        //Route pour l'affichage de la liste des jeux
+        $gameController->showAllGames();
+        break;
+    default:
+        //Route par défaut
+        http_response_code(404);
+        echo 'Page non trouvée';
+        break;
+}
+?>

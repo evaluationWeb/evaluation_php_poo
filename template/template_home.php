@@ -12,7 +12,7 @@
 <body>
     <?php include 'component/navbar.php'?>
     <main class="container">
-        <h1>Bienvenue sur le site Evaluation PHP POO</h1>
+        <h1>Bienvenue sur le site d'Alain</h1>
     </main>
 </body>
 
