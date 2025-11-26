@@ -32,7 +32,24 @@ class GameController extends AbstractController
      */
     public function addGame(): mixed
     {
-        return "template avec la méthode render";
+        $consoles = $this->consoleRepository->findAllConsoles();
+        $data = ["consoles" => $consoles];
+        if (!empty($_POST)) {
+            if (!empty($_POST["title"]) && !empty($_POST["type"]) && !empty($_POST["publish_at"]) && !empty($_POST["console_id"])) {
+                $game = new Game();
+                $game->setTitle(Tools::sanitize($_POST["title"]));
+                $game->setType(Tools::sanitize($_POST["type"]));
+                $publishAt = new \DateTimeImmutable($_POST["publish_at"]);
+                $game->setPublishAt($publishAt);
+                $game->setConsoleId((int)Tools::sanitize($_POST["console_id"]));
+
+                $this->gameRepository->addGame($game);
+                $data["valid"] = "Le jeu a été ajouté avec succés";
+            } else {
+                $data["error"] = "Veuillez remplir tous les champs";
+            }
+        }
+        return $this->render("add_game", "Ajouter un jeu", $data);
     }
 
     /**
@@ -41,6 +58,7 @@ class GameController extends AbstractController
      */
     public function showAllGames(): mixed
     {
-        return "template avec la méthode render";
+        $games = $this->gameRepository->findAllGames();
+        return $this->render("show_all_ames", "Liste des jeux", ["games" => $games]);
     }
 }
