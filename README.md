@@ -24,13 +24,14 @@ composer install
 
 ### 4 Créer un fichier .env avec les informations de la BDD
 ```env
-DATABASE_USERNAME=root
+DATABASE_USERNAME=
 DATABASE_PASSWORD=
-DATABASE_NAME=todolist
-DATABASE_HOST=localhost:3306
+DATABASE_NAME=
+DATABASE_HOST=
 ```
+### 5 Déployer la base de données avec votre script SQL
 
-### 5 démarrer le serveur PHP
+### 6 démarrer le serveur PHP
 ```sh
 php -S 127.0.0.1:8000 -t public
 ```
