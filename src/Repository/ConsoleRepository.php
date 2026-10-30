@@ -23,8 +23,16 @@ class ConsoleRepository
      * @return array<Console> Retourne le tableau des consoles (Console)
      * @throws \Exception Erreurs SQL
      */
-    public function findAllConsoles(): array 
+   public function findAllConsoles(): array 
     {
-        return [];
+        //  requête SELECT récupérant id, name et manufacturer
+        $sql = "SELECT id, name, manufacturer FROM console";
+
+        // Préparer et exécuter la requête
+        $query = $this->connect->prepare($sql);
+        $query->execute();
+
+        //tableau associatif avec fetchAll(PDO::FETCH_ASSOC)
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 }
