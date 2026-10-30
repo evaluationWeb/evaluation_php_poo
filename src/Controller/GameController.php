@@ -79,10 +79,16 @@ class GameController extends AbstractController
 
     /**
      * Méthode pour afficher la liste des Jeux (Game)
-     * @return mixed Retourne le template
+     * @return void Retourne le template
      */
-    public function showAllGames(): mixed 
+    public function showAllGames(): void
     {
-        return "template avec la méthode render";
+        $gameRepository = new GameRepository();
+
+        $games = $gameRepository->findAllGames();
+
+        $this->render('show_all_games', 'Liste des jeux', [
+        'games' => $games
+    ]);
     }
 }

@@ -13,6 +13,9 @@ class AbstractController
      */
     protected function render(string $template, ?string $title, array $data = []): void
     {
+        // Extrait les clés du tableau $data pour en faire des variables accessibles dans le template
+        extract($data);
+
         include __DIR__ . "/../../template/template_" . $template . ".php";
     }
 }
